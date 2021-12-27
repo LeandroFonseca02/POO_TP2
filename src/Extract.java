@@ -26,7 +26,7 @@ public class Extract {
         int intNumLines;
         String strLine;
         setIntNumColumns(strSplittedLine.length);
-        for (intNumLines = 1; (strLine = bufferedReader.readLine()) !=null; intNumLines++);
+        for(intNumLines = 1; (strLine = bufferedReader.readLine()) !=null; intNumLines++);
         setIntNumLines(intNumLines);
         bufferedReader.close();
     }
