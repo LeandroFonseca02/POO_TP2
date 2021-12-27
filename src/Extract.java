@@ -14,7 +14,7 @@ public class Extract {
         String strLine;
         for (int i = 0; (strLine = bufferedReader.readLine()) != null; i++){
             String[] strSplittedLine = strLine.split(",");
-            for(int j = 0; j < strSplittedLine.length; j++){
+            for (int j = 0; j < strSplittedLine.length; j++){
                 strMatrixData[i][j] = strSplittedLine[j];
             }
         }
@@ -26,7 +26,7 @@ public class Extract {
         int intNumLines;
         String strLine;
         setIntNumColumns(strSplittedLine.length);
-        for(intNumLines = 1; (strLine = bufferedReader.readLine()) !=null; intNumLines++);
+        for (intNumLines = 1; (strLine = bufferedReader.readLine()) != null; intNumLines++);
         setIntNumLines(intNumLines);
         bufferedReader.close();
     }

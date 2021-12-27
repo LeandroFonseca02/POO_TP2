@@ -1,10 +1,7 @@
 public class Transform {
-    String strTeste;
-    Transform(String strTeste){
-        this.strTeste = strTeste;
+    Transform(String[][] strTeste){
+
     }
 
-    public String getStrTeste() {
-        return strTeste;
-    }
+
 }
