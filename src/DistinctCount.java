@@ -15,7 +15,6 @@ public class DistinctCount {
     DistinctCount(ArrayList<HashMap<String,String>> data, String column){
         extractedColumn=new HashSet<>();
         extractedColumn=ExtractColumn(data,column);
-        printExtractedColumn(extractedColumn);
     }
 
     /**
@@ -42,7 +41,7 @@ public class DistinctCount {
         return this.extractedColumn.size();
     }
 
-    public void printExtractedColumn(Set<String> extractedColumn){
+    public void printExtractedColumn(){
         for(String s: extractedColumn){
             System.out.println(s);
         }
