@@ -1,3 +1,5 @@
+package helperClasses;
+
 import java.util.*;
 
 public class DistinctCount {
@@ -12,7 +14,7 @@ public class DistinctCount {
      * @param data arraylist de hashmaps, onde os dados estão guardados.
      * @param column chave da coluna a extraír os elementos.
      */
-    DistinctCount(ArrayList<HashMap<String,String>> data, String column){
+   public DistinctCount(ArrayList<HashMap<String,String>> data, String column){
         extractedColumn=new HashSet<>();
         extractedColumn=ExtractColumn(data,column);
     }

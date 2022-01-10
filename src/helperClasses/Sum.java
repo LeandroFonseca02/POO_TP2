@@ -1,3 +1,5 @@
+package helperClasses;
+
 import java.util.*;
 
 public class Sum {
@@ -5,7 +7,7 @@ public class Sum {
     private ArrayList<String> extractedColumn;
 
     /**
-     * Contrutor da classe Sum.
+     * Contrutor da classe helperClasses.Sum.
      * Existe uma extração de uma coluna a partir dos dados do ficheiro
      * para uma ArrayList de Strings, e soma todos os elementos da mesma
      * guardado esse valor.
@@ -13,7 +15,7 @@ public class Sum {
      * @param data arraylist de hashmaps, onde os dados estão guardados.
      * @param column chave da coluna a extraír os elementos.
      */
-    Sum(ArrayList<HashMap<String,String>> data, String column){
+    public Sum(ArrayList<HashMap<String,String>> data, String column){
         extractedColumn = new ArrayList<>();
         ExtractColumn(data, column);
         sumList();

@@ -1,10 +1,7 @@
-public class Load {
-    String strTeste;
-    Load(String strTeste){
-        this.strTeste = strTeste;
-    }
+import java.util.*;
 
-    public String getStrTeste() {
-        return strTeste;
+public class Load {
+    Load(ArrayList<HashMap<String, String>> filteredData){
+
     }
 }

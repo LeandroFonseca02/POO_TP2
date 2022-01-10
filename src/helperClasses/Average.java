@@ -1,10 +1,12 @@
+package helperClasses;
+
 import java.util.*;
 
-public class Average extends Sum{
+public class Average extends Sum {
     private double average;
 
     /**
-     * Contrutor da classe Average.
+     * Contrutor da classe helperClasses.Average.
      * Existe uma extração de uma coluna a partir dos dados do ficheiro
      * para uma ArrayList de Strings, realizando uma média aos valores
      * extraídos.
@@ -12,7 +14,7 @@ public class Average extends Sum{
      * @param data arraylist de hashmaps, onde os dados estão guardados.
      * @param column chave da coluna a extraír os elementos.
      */
-    Average(ArrayList<HashMap<String, String>> data, String column) {
+    public Average(ArrayList<HashMap<String, String>> data, String column) {
         super(data, column);
         calculateAverage(super.Output(), super.numberOfElements());
     }
