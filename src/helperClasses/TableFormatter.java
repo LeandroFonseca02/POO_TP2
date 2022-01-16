@@ -5,10 +5,10 @@ import java.util.Map;
 
 
 public class TableFormatter {
-    ArrayList<HashMap<String,String>> table;
-    ArrayList<Integer> listMaxChar;
-    int intNumLines;
-    int intNumCols;
+    private ArrayList<HashMap<String,String>> table;
+    private ArrayList<Integer> listMaxChar;
+    private int intNumLines;
+    private int intNumCols;
 
 
     public TableFormatter(ArrayList<HashMap<String,String>> data, int intNumLines, int intNumCols){

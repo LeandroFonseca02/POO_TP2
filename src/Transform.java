@@ -3,8 +3,8 @@ import helperClasses.Table;
 
 public class Transform {
     private ArrayList<HashMap<String,String>> dataStorage;
-    int intNumLines;
-    int intNumCols;
+    private int intNumLines;
+    private int intNumCols;
     Transform(String[][]strMatrixData){
         dataStorage = new ArrayList<>();
         transformData(strMatrixData, dataStorage);

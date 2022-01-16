@@ -19,7 +19,7 @@ public class DistinctCount {
         this.extractedColumn=new HashSet<>();
         this.strColumn = column;
         this.extractedColumn=ExtractColumn(data.getTable(),strColumn);
-        printExtractedColumn(extractedColumn);
+        this.output();
     }
 
     /**
@@ -46,22 +46,8 @@ public class DistinctCount {
         return this.extractedColumn.size();
     }
 
-    public void printExtractedColumn(Set<String> extractedColumn){
-        int intMaxChar = this.strColumn.length();
-        StringBuilder strFormatter = new StringBuilder();
-        for(String s: extractedColumn){
-            intMaxChar = Math.max(s.length(), intMaxChar);
-        }
-        System.out.println("-".repeat(intMaxChar +4));
-        strFormatter.append("%").append(intMaxChar).append("s");
-        System.out.printf("| " + strFormatter + " |\n", this.strColumn);
-        System.out.println("-".repeat(intMaxChar +4));
-
-
-        for(String s: extractedColumn){
-            System.out.printf("| " + strFormatter + " |\n", s);
-        }
-        System.out.println("-".repeat(intMaxChar +4));
+    public String toString(){
+        return ("A coluna " + this.strColumn + " têm " + this.output() + " valores distintos!");
     }
 }
 
