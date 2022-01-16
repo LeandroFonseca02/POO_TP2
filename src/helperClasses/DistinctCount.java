@@ -4,6 +4,7 @@ import java.util.*;
 
 public class DistinctCount {
     private Set<String> extractedColumn;
+    private String strColumn;
 
     /**
      * Contrutor da classe DistictCount.
@@ -11,12 +12,13 @@ public class DistinctCount {
      * Executa a função Extractcolumn que extrai uma coluna dos dados
      * e guarda no Set extractedColumn.
      *
-     * @param data arraylist de hashmaps, onde os dados estão guardados.
+     * @param data objeto tabela, onde os dados estão guardados.
      * @param column chave da coluna a extraír os elementos.
      */
-    DistinctCount(ArrayList<HashMap<String,String>> data, String column){
-        extractedColumn=new HashSet<>();
-        extractedColumn=ExtractColumn(data,column);
+    public DistinctCount(Table data, String column){
+        this.extractedColumn=new HashSet<>();
+        this.strColumn = column;
+        this.extractedColumn=ExtractColumn(data.getTable(),strColumn);
         printExtractedColumn(extractedColumn);
     }
 
@@ -40,14 +42,26 @@ public class DistinctCount {
      *
      * @return Set de elementos da coluna.
      */
-    public int Output(){
+    public int output(){
         return this.extractedColumn.size();
     }
 
     public void printExtractedColumn(Set<String> extractedColumn){
+        int intMaxChar = this.strColumn.length();
+        StringBuilder strFormatter = new StringBuilder();
         for(String s: extractedColumn){
-            System.out.println(s);
+            intMaxChar = Math.max(s.length(), intMaxChar);
         }
+        System.out.println("-".repeat(intMaxChar +4));
+        strFormatter.append("%").append(intMaxChar).append("s");
+        System.out.printf("| " + strFormatter + " |\n", this.strColumn);
+        System.out.println("-".repeat(intMaxChar +4));
+
+
+        for(String s: extractedColumn){
+            System.out.printf("| " + strFormatter + " |\n", s);
+        }
+        System.out.println("-".repeat(intMaxChar +4));
     }
 }
 

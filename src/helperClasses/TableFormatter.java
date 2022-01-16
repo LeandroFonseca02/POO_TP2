@@ -59,7 +59,7 @@ public class TableFormatter {
             stringArrayListFormatter.add("%" + this.getListMaxChar().get(i) + "s");
         }
 
-        System.out.println("+".repeat(this.getListMaxChar().get(this.getListMaxChar().size()-1) + (this.getIntNumCols() *3) +1));
+        System.out.println("-".repeat(this.getListMaxChar().get(this.getListMaxChar().size()-1) + (this.getIntNumCols() *3) +1));
         System.out.print("| ");
 
         for (int i = 0; i < this.getIntNumCols(); i++) {

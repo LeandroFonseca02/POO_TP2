@@ -1,10 +1,15 @@
 import java.util.*;
+import helperClasses.Table;
 
 public class Transform {
     private ArrayList<HashMap<String,String>> dataStorage;
+    int intNumLines;
+    int intNumCols;
     Transform(String[][]strMatrixData){
         dataStorage = new ArrayList<>();
         transformData(strMatrixData, dataStorage);
+        this.intNumLines = strMatrixData.length-1;
+        this.intNumCols = strMatrixData[0].length;
     }
     private void transformData(String[][] strMatrixData, ArrayList<HashMap<String,String>> dataStorage) {
         for(int j = 0; j<strMatrixData[0].length; j++){
@@ -15,7 +20,7 @@ public class Transform {
             }
         }
     }
-    public ArrayList<HashMap<String, String>> getDataStorage() {
-        return dataStorage;
+    public Table getDataStorage() {
+        return new Table(this.dataStorage,this.intNumLines,this.intNumCols);
     }
 }

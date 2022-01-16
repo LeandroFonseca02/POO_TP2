@@ -11,10 +11,10 @@ public class Average extends Sum {
      * para uma ArrayList de Strings, realizando uma média aos valores
      * extraídos.
      *
-     * @param data arraylist de hashmaps, onde os dados estão guardados.
+     * @param data objeto tabela, onde os dados estão guardados.
      * @param column chave da coluna a extraír os elementos.
      */
-    public Average(ArrayList<HashMap<String, String>> data, String column) {
+    public Average(Table data, String column) {
         super(data, column);
         calculateAverage(super.Output(), super.numberOfElements());
     }

@@ -12,12 +12,12 @@ public class Sum {
      * para uma ArrayList de Strings, e soma todos os elementos da mesma
      * guardado esse valor.
      *
-     * @param data arraylist de hashmaps, onde os dados estão guardados.
+     * @param data objeto table, onde os dados estão guardados.
      * @param column chave da coluna a extraír os elementos.
      */
-    public Sum(ArrayList<HashMap<String,String>> data, String column){
+    public Sum(Table data, String column){
         extractedColumn = new ArrayList<>();
-        ExtractColumn(data, column);
+        ExtractColumn(data.getTable(), column);
         sumList();
     }
 
