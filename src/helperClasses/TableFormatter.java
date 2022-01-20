@@ -102,7 +102,7 @@ public class TableFormatter {
             }
             System.out.println();
         }
-        System.out.println(strHorizontalSep);
+        System.out.println("-".repeat(this.listMaxChar.get(this.listMaxChar.size()-1) + (this.intNumCols *3) +1));
     }
 }
 

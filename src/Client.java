@@ -5,11 +5,12 @@ import helperClasses.*;
 public class Client {
     public static void main(String[] args) {
         try {
-            Extract objExtract = new Extract("./resources/Customer_Data.csv");
+            Extract objExtract = new Extract("./resources/teste.csv");
             Transform objTransform = new Transform(objExtract.getStrMatrixData());
             Table objTable = objTransform.getDataStorage();
             //All a = new All(objTable);
-
+            Table table = new Table(objTable);
+            table.printTable();
 
 //            CountRows countRows = new CountRows(objTable);
 //            System.out.println(countRows);
