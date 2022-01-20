@@ -4,13 +4,12 @@ import java.util.*;
 
 public class Load {
     Table objTable;
-    Load(Table table) throws Exception {
+    Load(Table table, Scanner scanner) throws Exception {
         this.objTable = new Table(table);
-        this.processOutput();
+        this.processOutput(scanner);
     }
 
-    public void processOutput() throws Exception {
-        Scanner scanner = new Scanner(System.in);
+    public void processOutput(Scanner scanner) throws Exception {
         Regex objRegex = new Regex(scanner.nextLine());
         ArrayList<String> arrayListCommand = objRegex.regex();
         Collections.reverse(arrayListCommand);
