@@ -16,7 +16,7 @@ public class Average extends Sum {
      */
     public Average(Table data, String column) {
         super(data, column);
-        calculateAverage(super.Output(), super.numberOfElements());
+        calculateAverage(super.output(), super.numberOfElements());
     }
 
     /**
@@ -33,7 +33,11 @@ public class Average extends Sum {
      * Retorna a média dos elementos de uma lista
      * @return média dos elementos de uma list
      */
-    public double Output(){
+    public double output(){
         return average;
+    }
+
+    public String toString(){
+        return"A média dos elementos da coluna "+super.column+" é: "+output();
     }
 }

@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Sum {
     private double sum;
+    protected String column;
     private ArrayList<String> extractedColumn;
 
     /**
@@ -17,6 +18,7 @@ public class Sum {
      */
     public Sum(Table data, String column){
         extractedColumn = new ArrayList<>();
+        this.column=column;
         ExtractColumn(data.getTable(), column);
         sumList();
     }
@@ -59,7 +61,11 @@ public class Sum {
      * Retorna a soma dos elementos da coluna extraída.
      * @return Soma dos elementos da coluna extraída
      */
-    public double Output(){
+    public double output(){
         return this.sum;
+    }
+
+    public String toString(){
+        return "A soma dos elementos da coluna "+column+" é: "+output();
     }
 }
