@@ -18,7 +18,7 @@ public class Filter {
         int counter = 0;
         for(HashMap<String, String> map :  this.objTable.getTable()){
             if(map.containsKey(this.strColumn)){
-                if(expression.transformSignal(map.get(this.strColumn))){
+                if(expression.isConditionTrue(map.get(this.strColumn))){
                     this.intList.add(counter);
                 }
                 counter++;

@@ -4,13 +4,13 @@ public class Expression {
     String strOperator;
     String strColumn;
     String strToCompare;
-    public Expression(String column, String signal, String number){
+    public Expression(String column, String signal, String value){
         this.strOperator=signal;
         this.strColumn=column;
-        this.strToCompare = number;
+        this.strToCompare = value;
     }
 
-    public boolean transformSignal(String strCompareTo){
+    public boolean isConditionTrue(String strCompareTo){
         if(Regex.isString(this.strToCompare)){
             switch(strOperator){
                 case "=":
