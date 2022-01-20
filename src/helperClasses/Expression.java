@@ -1,42 +1,35 @@
 package helperClasses;
 
 public class Expression {
-    String signal;
-    String column;
-    int number;
+    String strOperator;
+    String strColumn;
+    int intNumCompare;
     public Expression(String column, String signal, String number){
-        this.signal=signal;
-        this.column=column;
-        this.number=Integer.parseInt(number);
+        this.strOperator=signal;
+        this.strColumn=column;
+        this.intNumCompare=Integer.parseInt(number);
     }
 
-    public boolean transformSignal(int condition){
-        switch(signal){
+    public boolean transformSignal(int intCompareTo){
+        switch(strOperator){
             case ">":
-                return (condition>number);
-
+                return (intCompareTo > this.intNumCompare);
             case "<":
-                return (condition<number);
-
+                return (intCompareTo < this.intNumCompare);
             case ">=":
-                return (condition>=number);
-
+                return (intCompareTo >= this.intNumCompare);
             case "<=":
-                return (condition<=number);
-
+                return (intCompareTo <= this.intNumCompare);
             case "=":
-                return (condition==number);
-
+                return (intCompareTo == this.intNumCompare);
             case "!=":
-                return (condition!=number);
-
+                return (intCompareTo != this.intNumCompare);
             default:
                 return false;
         }
-
     }
 
     public String getColumn() {
-        return column;
+        return this.strColumn;
     }
 }
