@@ -1,15 +1,16 @@
+import Exceptions.NoLinesTableException;
 import helperClasses.*;
 
 import java.util.*;
 
 public class Load {
     Table objTable;
-    Load(Table table, Scanner scanner) throws Exception {
+    Load(Table table, Scanner scanner) throws NoLinesTableException {
         this.objTable = new Table(table);
         this.processOutput(scanner);
     }
 
-    public void processOutput(Scanner scanner) throws Exception {
+    public void processOutput(Scanner scanner) throws NoLinesTableException {
         Regex objRegex = new Regex(scanner.nextLine());
         ArrayList<String> arrayListCommand = objRegex.regex();
         Collections.reverse(arrayListCommand);

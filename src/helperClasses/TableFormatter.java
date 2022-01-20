@@ -1,4 +1,6 @@
 package helperClasses;
+import Exceptions.NoLinesTableException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -62,7 +64,8 @@ public class TableFormatter {
      * Método para imprimir a tabela formatada.
      * Calcula os separadores e os formatadores de cada coluna.
      */
-    public void printTable(){
+    public void printTable() throws NoLinesTableException {
+        if(intNumLines == 0) throw new NoLinesTableException("");
         StringBuilder strHorizontalSep = new StringBuilder();
         ArrayList<String> stringArrayListFormatter = new ArrayList<>();
         int intCounter = 0;

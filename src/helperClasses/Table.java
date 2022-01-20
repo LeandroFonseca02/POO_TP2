@@ -1,4 +1,6 @@
 package helperClasses;
+import Exceptions.NoLinesTableException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -26,7 +28,7 @@ public class Table {
 
     public int getIntNumCols() {return intNumCols;}
 
-    public void printTable(){this.tableFormatter.printTable();}
+    public void printTable() throws NoLinesTableException {this.tableFormatter.printTable();}
 
     public ArrayList<HashMap<String, String>> getTable() {return table;}
 }

@@ -1,5 +1,7 @@
 package helperClasses;
 
+import Exceptions.NoLinesTableException;
+
 public class All {
     Table data;
     /**
@@ -10,7 +12,5 @@ public class All {
     public All(Table data){
         this.data=new Table(data);
     }
-    public void printTable(){
-        data.printTable();
-    }
+    public void printTable() throws NoLinesTableException {data.printTable();}
 }

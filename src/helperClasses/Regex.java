@@ -12,7 +12,7 @@ public class Regex{
         this.strQuery=query;
     }
 
-    public ArrayList<String> regex () throws java.lang.Exception{
+    public ArrayList<String> regex (){
         final String functionNameRegex = "\\w*[=<>!&|]*";
         final Pattern fnPattern = Pattern.compile(functionNameRegex, Pattern.CASE_INSENSITIVE | Pattern.COMMENTS);
         final Matcher fnMatcher = fnPattern.matcher(this.strQuery);
