@@ -10,6 +10,7 @@ public class Client {
             Table objTable = objTransform.getDataStorage();
             //All a = new All(objTable);
 
+
 //            CountRows countRows = new CountRows(objTable);
 //            System.out.println(countRows);
             DistinctCount dc = new DistinctCount(objTable, "Geography");

@@ -12,6 +12,7 @@ public class Table {
         this.table = data.getTable();
         this.intNumLines = data.getIntNumLines();
         this.intNumCols = data.getIntNumCols();
+        this.tableFormatter = new TableFormatter(this.getTable(),this.intNumLines,this.intNumCols);
     }
 
     public Table(ArrayList<HashMap<String,String>> data, int intNumLines, int intNumCols){
