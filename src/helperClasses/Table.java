@@ -8,6 +8,12 @@ public class Table {
     private int intNumCols;
     private TableFormatter tableFormatter;
 
+    public Table(Table data){
+        this.table = data.getTable();
+        this.intNumLines = data.getIntNumLines();
+        this.intNumCols = data.getIntNumCols();
+    }
+
     public Table(ArrayList<HashMap<String,String>> data, int intNumLines, int intNumCols){
         this.table = data;
         this.intNumLines = intNumLines;

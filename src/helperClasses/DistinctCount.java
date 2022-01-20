@@ -29,7 +29,7 @@ public class DistinctCount {
      * @param column chave da coluna a extraír os elementos.
      * @return retorna o Set com os elementos da coluna extraída.
      */
-    public Set<String> ExtractColumn(ArrayList<HashMap<String,String>> data, String column){
+    private Set<String> ExtractColumn(ArrayList<HashMap<String,String>> data, String column){
         for (HashMap<String, String> map : data) {
             if (map.containsKey(column))
                 extractedColumn.add(map.get(column));
@@ -46,6 +46,11 @@ public class DistinctCount {
         return this.extractedColumn.size();
     }
 
+    /**
+     * Retorna uma string com as informações do objeto
+     *
+     * @return string com as informações e output
+     */
     public String toString(){
         return ("A coluna " + this.strColumn + " têm " + this.output() + " valores distintos!");
     }

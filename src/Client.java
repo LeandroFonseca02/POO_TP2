@@ -10,16 +10,16 @@ public class Client {
             Table objTable = objTransform.getDataStorage();
             //All a = new All(objTable);
 
-            CountRows countRows = new CountRows(objTable);
-            System.out.println(countRows);
-//            DistinctCount dc = new DistinctCount(objTable, "Gender");
-//            System.out.println(dc);
-//            Sum s = new Sum(objTable, "Age");
+//            CountRows countRows = new CountRows(objTable);
+//            System.out.println(countRows);
+            DistinctCount dc = new DistinctCount(objTable, "Geography");
+            System.out.println(dc);
+//            Sum s = new Sum(objTable, "Balance");
 //            System.out.println(s.Output());
-//            Average av = new Average(objTable, "Age");
+//            Average av = new Average(objTable, "Tenure");
 //            System.out.println(av.Output());
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Ficheiro nao encontrado");
         }
     }
 }
