@@ -24,5 +24,11 @@ public class Regex{
         }
         return expression;
     }
+
+    public static boolean isString(String strToTest){
+        boolean teste;
+        teste = (strToTest.matches("\\\\d*[.]\\\\d+"));
+        return !teste;
+    }
 }
 

@@ -8,8 +8,8 @@ public class Client {
         try {
             Scanner scanner = new Scanner(System.in);
             StringBuilder strPath = new StringBuilder("./resources/");
-            String strFileName = scanner.nextLine();
-//            String strFileName = "Customer_Data.csv";
+//            String strFileName = scanner.nextLine();
+            String strFileName = "Customer_Data.csv";
             strPath.append(strFileName);
             Extract objExtract = new Extract(strPath.toString());
             Transform objTransform = new Transform(objExtract.getStrMatrixData());
