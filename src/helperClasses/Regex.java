@@ -8,10 +8,23 @@ import java.util.regex.*;
 public class Regex{
     String strQuery;
 
+    /**
+     * Contrutor da classe Regex
+     * Inicializa uma String que guarda a query.
+     *
+     * @param query query introduzida
+     */
     public Regex(String query){
         this.strQuery=query;
     }
 
+    /**
+     * Método que separa a query segunda uma expressão regular e guarda
+     * a informação útil contida na query guardado essa informação
+     * numa ArrayList.
+     *
+     * @return a ArrayList com a informação filtrada
+     */
     public ArrayList<String> regex (){
         final String functionNameRegex = "\\w*[=<>!&|]*";
         final Pattern fnPattern = Pattern.compile(functionNameRegex, Pattern.CASE_INSENSITIVE | Pattern.COMMENTS);
@@ -25,6 +38,11 @@ public class Regex{
         return expression;
     }
 
+    /**
+     *
+     * @param strToTest
+     * @return
+     */
     public static boolean isString(String strToTest){
         boolean teste;
         teste = (strToTest.matches("\\\\d*[.]\\\\d+"));

@@ -7,6 +7,14 @@ public class Filter {
     Table objTable;
     String strColumn;
     ArrayList<Integer> intList;
+
+    /**
+     * Contrutor da classe Filter.
+     * Recebe um objeto do tipo Table para ser filtrado através de uma expressão
+     *
+     * @param table objeto do tipo Table
+     * @param expression expressão a filtrar
+     */
     public Filter(Table table, Expression expression){
         this.objTable = new Table(table);
         this.strColumn = expression.getColumn();
@@ -14,6 +22,12 @@ public class Filter {
         filterTable(expression);
     }
 
+    /**
+     *  Método que filtra o objeto Table segundo a expressão
+     *  presente na query.
+     *
+     * @param expression
+     */
     public void filterTable(Expression expression){
         int counter = 0;
         for(HashMap<String, String> map :  this.objTable.getTable()){
@@ -26,6 +40,12 @@ public class Filter {
         }
     }
 
+    /**
+     *  Devolve um novo objeto Table que representa uma nova tabela de dados
+     *  filtrada pela expressão.
+     *
+     * @return objeto Table com dados filtrados
+     */
     public Table getOutputTable(){
         ArrayList<HashMap<String,String>> map = new ArrayList<>();
         int counter = 0;

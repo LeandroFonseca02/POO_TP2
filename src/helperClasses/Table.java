@@ -10,6 +10,14 @@ public class Table {
     private int intNumCols;
     private TableFormatter tableFormatter;
 
+    /**
+     * Primeiro Construtor da classe Table.
+     * Inicializa uma instância da classe Table, guardado os dados do
+     * ficheiro lido bem como o seu número de linhas e o seu número de colunas.
+     * Inicializa a partir de outro objeto da classe Table
+     *
+     * @param data objeto do tipo Table
+     */
     public Table(Table data){
         this.table = data.getTable();
         this.intNumLines = data.getIntNumLines();
@@ -17,6 +25,14 @@ public class Table {
         this.tableFormatter = new TableFormatter(this.getTable(),this.intNumLines,this.intNumCols);
     }
 
+    /**
+     * Segundo construtor da classe Table.
+     * Inicializa com os dados lidos do ficheiro o número de linhas e colunas.
+     *
+     * @param data dados lidos do ficheiro
+     * @param intNumLines número de linha
+     * @param intNumCols número de colunas
+     */
     public Table(ArrayList<HashMap<String,String>> data, int intNumLines, int intNumCols){
         this.table = data;
         this.intNumLines = intNumLines;
@@ -24,11 +40,32 @@ public class Table {
         this.tableFormatter = new TableFormatter(this.getTable(),this.intNumLines,this.intNumCols);
     }
 
+    /**
+     * Devolve o número de linhas dos dados.
+     *
+     * @return número de linhas
+     */
     public int getIntNumLines() {return intNumLines;}
 
+    /**
+     * Devolve o número de colunas dos dados.
+     *
+     * @return número de colunas
+     */
     public int getIntNumCols() {return intNumCols;}
 
+    /**
+     *  Imprime os dados formatados numa tabela.
+     *  Lança exceção caso não exista valores a imprimir.
+     *
+     * @throws NoLinesTableException
+     */
     public void printTable() throws NoLinesTableException {this.tableFormatter.printTable();}
 
+    /**
+     *  Devolve os dados do ficheiro
+     *
+     * @return ArrayList de hashmaps que contem os dados
+     */
     public ArrayList<HashMap<String, String>> getTable() {return table;}
 }
