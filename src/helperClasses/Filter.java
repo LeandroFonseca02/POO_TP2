@@ -26,7 +26,7 @@ public class Filter {
      *  Método que filtra o objeto Table segundo a expressão
      *  presente na query.
      *
-     * @param expression
+     * @param expression objeto Expression para filtrar a tabela.
      */
     public void filterTable(Expression expression){
         int counter = 0;

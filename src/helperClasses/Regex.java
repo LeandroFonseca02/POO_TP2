@@ -39,14 +39,12 @@ public class Regex{
     }
 
     /**
-     *
-     * @param strToTest
-     * @return
+     * Método para saber se o conteúdo duma Strong é um número
+     * @param strToTest string a verificar
+     * @return boolean com valor se a String é um número
      */
-    public static boolean isString(String strToTest){
-        boolean teste;
-        teste = (strToTest.matches("\\\\d*[.]\\\\d+"));
-        return !teste;
+    public static boolean isNumber(String strToTest){
+        return (strToTest.matches("\\d*[.]*\\d+"));
     }
 }
 

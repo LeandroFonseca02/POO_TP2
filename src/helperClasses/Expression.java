@@ -30,20 +30,11 @@ public class Expression {
      * de um número ou de uma String para poder aplicar diferentes
      * comparações.
      *
-     * @param strCompareTo
-     * @return
+     * @param strCompareTo string para validar com a expressáo
+     * @return booleano com valor da validação.
      */
     public boolean isConditionTrue(String strCompareTo){
-        if(Regex.isString(this.strToCompare)){
-            switch(strOperator){
-                case "=":
-                    return (strCompareTo.equals(strToCompare));
-                case "!=":
-                    return (!strCompareTo.equals(strToCompare));
-                default:
-                    return false;
-            }
-        }else {
+        if(Regex.isNumber(this.strToCompare)){
             double dblCompareTo = Double.parseDouble(strCompareTo);
             double dblNumCompare = Double.parseDouble(this.strToCompare);
             switch(strOperator){
@@ -59,6 +50,15 @@ public class Expression {
                     return (dblCompareTo == dblNumCompare);
                 case "!=":
                     return (dblCompareTo != dblNumCompare);
+                default:
+                    return false;
+            }
+        }else {
+            switch(strOperator){
+                case "=":
+                    return (strCompareTo.equals(strToCompare));
+                case "!=":
+                    return (!strCompareTo.equals(strToCompare));
                 default:
                     return false;
             }
