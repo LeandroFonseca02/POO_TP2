@@ -31,7 +31,8 @@ public class Regex{
         final Matcher fnMatcher = fnPattern.matcher(this.strQuery);
         ArrayList<String> expression = new ArrayList<>();
         while (fnMatcher.find()) {
-            if(!fnMatcher.group(0).equals("") && !fnMatcher.group(0).equals("Customer_Data")){
+            if(!fnMatcher.group(0).equals("") && !fnMatcher.group(0).equals("Customer_Data")
+                    && !fnMatcher.group(0).equals("CALCULATE")){
                 expression.add(fnMatcher.group(0));
             }
         }

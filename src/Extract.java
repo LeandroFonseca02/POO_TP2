@@ -57,7 +57,7 @@ public class Extract {
     }
 
     /**
-     * Método para retornar matriz com conteúdo da tabela.
+     * Método para retornar a matriz com conteúdo da tabela.
      *
      * @return Matriz de strings com conteúdo do ficheiro.
      */
