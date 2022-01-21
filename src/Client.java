@@ -9,7 +9,7 @@ public class Client {
         Scanner scanner = new Scanner(System.in);
         StringBuilder strPath = new StringBuilder("./resources/");
 //            String strFileName = scanner.nextLine();
-        String strFileName = "Customer_Data.csv";
+        String strFileName = "teste.csv";
         strPath.append(strFileName);
         try {
             Extract objExtract = new Extract(strPath.toString());
