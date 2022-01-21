@@ -1,5 +1,6 @@
 package JUnit;
 
+import Exceptions.ImpossibleConditionException;
 import helperClasses.Expression;
 import helperClasses.Filter;
 import helperClasses.Table;
@@ -44,7 +45,7 @@ class FilterTest {
         return table;
     }
     @Test
-    void getOutputTable() {
+    void getOutputTable() throws ImpossibleConditionException {
         Table table = initMap();
         Filter filter = new Filter(table, new Expression("A", "=", "1"));
         assertEquals(1, filter.getOutputTable().getIntNumLines());

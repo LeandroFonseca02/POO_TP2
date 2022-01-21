@@ -1,4 +1,6 @@
+import Exceptions.ImpossibleConditionException;
 import Exceptions.NoLinesTableException;
+import Exceptions.NoNumberFieldException;
 import helperClasses.*;
 
 import java.util.*;
@@ -16,7 +18,7 @@ public class Load {
      * @param scanner Scanner de inputs
      * @throws NoLinesTableException
      */
-    Load(Table table, Scanner scanner) throws NoLinesTableException {
+    Load(Table table, Scanner scanner) throws NoLinesTableException,NoNumberFieldException,ImpossibleConditionException {
         this.objTable = new Table(table);
         this.processOutput(scanner);
     }
@@ -34,7 +36,7 @@ public class Load {
      * @param scanner
      * @throws NoLinesTableException 
      */
-    public void processOutput(Scanner scanner) throws NoLinesTableException {
+    public void processOutput(Scanner scanner) throws NoLinesTableException, NoNumberFieldException, ImpossibleConditionException {
         Regex objRegex = new Regex(scanner.nextLine());
         ArrayList<String> arrayListCommand = objRegex.regex();
         Collections.reverse(arrayListCommand);

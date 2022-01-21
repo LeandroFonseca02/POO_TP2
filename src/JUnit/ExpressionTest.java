@@ -1,5 +1,6 @@
 package JUnit;
 
+import Exceptions.ImpossibleConditionException;
 import helperClasses.Expression;
 import helperClasses.Table;
 import org.junit.jupiter.api.Test;
@@ -43,7 +44,7 @@ class ExpressionTest {
         return table;
     }
     @Test
-    void isConditionTrue() {
+    void isConditionTrue() throws ImpossibleConditionException {
         Expression expression = new Expression("A", "=", "1");
         assertTrue(expression.isConditionTrue("1"));
         assertFalse(expression.isConditionTrue("2"));

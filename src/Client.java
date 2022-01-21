@@ -1,4 +1,6 @@
+import Exceptions.ImpossibleConditionException;
 import Exceptions.NoLinesTableException;
+import Exceptions.NoNumberFieldException;
 import helperClasses.*;
 
 import java.io.IOException;
@@ -9,7 +11,7 @@ public class Client {
         Scanner scanner = new Scanner(System.in);
         StringBuilder strPath = new StringBuilder("./resources/");
 //            String strFileName = scanner.nextLine();
-        String strFileName = "teste.csv";
+        String strFileName = "Customer_Data.csv";
         strPath.append(strFileName);
         try {
             Extract objExtract = new Extract(strPath.toString());
@@ -19,6 +21,10 @@ public class Client {
             System.out.println("Não foi encontrado o ficheiro " + strPath.toString() + "!");
         } catch (NoLinesTableException noLinesTableException) {
             System.out.println("A tabela resultante têm 0 linhas, logo não pode ser apresentada!");
+        }catch (NoNumberFieldException noNumberFieldException){
+            System.out.println("A coluna que está a tentar calcular o AVERAGE/SUM não são números!");
+        }catch (ImpossibleConditionException impossibleConditionException) {
+            System.out.println("A expressão que tentou calcular não é possível!");
         }
     }
 }

@@ -1,5 +1,7 @@
 package helperClasses;
 
+import Exceptions.ImpossibleConditionException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -15,7 +17,7 @@ public class Filter {
      * @param table objeto do tipo Table
      * @param expression expressão a filtrar
      */
-    public Filter(Table table, Expression expression){
+    public Filter(Table table, Expression expression) throws ImpossibleConditionException{
         this.objTable = new Table(table);
         this.strColumn = expression.getColumn();
         this.intList=new ArrayList<>();
@@ -28,7 +30,7 @@ public class Filter {
      *
      * @param expression objeto Expression para filtrar a tabela.
      */
-    public void filterTable(Expression expression){
+    public void filterTable(Expression expression) throws ImpossibleConditionException {
         int counter = 0;
         for(HashMap<String, String> map :  this.objTable.getTable()){
             if(map.containsKey(this.strColumn)){

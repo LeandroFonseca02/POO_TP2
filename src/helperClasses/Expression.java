@@ -1,5 +1,7 @@
 package helperClasses;
 
+import Exceptions.ImpossibleConditionException;
+
 public class Expression {
     String strOperator;
     String strColumn;
@@ -33,8 +35,8 @@ public class Expression {
      * @param strCompareTo string para validar com a expressáo
      * @return booleano com valor da validação.
      */
-    public boolean isConditionTrue(String strCompareTo){
-        if(Regex.isNumber(this.strToCompare)){
+    public boolean isConditionTrue(String strCompareTo) throws ImpossibleConditionException{
+        if(Regex.isNumber(this.strToCompare) && Regex.isNumber(strCompareTo)){
             double dblCompareTo = Double.parseDouble(strCompareTo);
             double dblNumCompare = Double.parseDouble(this.strToCompare);
             switch(strOperator){
@@ -51,7 +53,7 @@ public class Expression {
                 case "!=":
                     return (dblCompareTo != dblNumCompare);
                 default:
-                    return false;
+                    throw new ImpossibleConditionException("");
             }
         }else {
             switch(strOperator){
@@ -60,7 +62,7 @@ public class Expression {
                 case "!=":
                     return (!strCompareTo.equals(strToCompare));
                 default:
-                    return false;
+                    throw new ImpossibleConditionException("");
             }
         }
     }

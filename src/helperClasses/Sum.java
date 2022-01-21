@@ -1,5 +1,7 @@
 package helperClasses;
 
+import Exceptions.NoNumberFieldException;
+
 import java.util.*;
 
 public class Sum {
@@ -16,7 +18,7 @@ public class Sum {
      * @param data objeto table, onde os dados estão guardados.
      * @param column chave da coluna a extraír os elementos.
      */
-    public Sum(Table data, String column){
+    public Sum(Table data, String column) throws NoNumberFieldException{
         extractedColumn = new ArrayList<>();
         this.column=column;
         ExtractColumn(data.getTable(), column);
@@ -43,8 +45,9 @@ public class Sum {
      *  da coluna extraída.
      *  Os valores são passados a double através de uma função parse.
      */
-    public void sumList(){
+    public void sumList() throws  NoNumberFieldException{
         for(String s: extractedColumn){
+            if(!Regex.isNumber(s)) throw new NoNumberFieldException("");
             sum += Double.parseDouble(s);
         }
     }

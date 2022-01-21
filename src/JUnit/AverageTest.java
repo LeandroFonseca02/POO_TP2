@@ -1,5 +1,6 @@
 package JUnit;
 
+import Exceptions.NoNumberFieldException;
 import helperClasses.Average;
 import helperClasses.Table;
 import org.junit.jupiter.api.Test;
@@ -44,7 +45,7 @@ class AverageTest {
     }
 
     @Test
-    void output() {
+    void output() throws NoNumberFieldException  {
         Table table = initMap();
         Average avg = new Average(table, "A");
         assertEquals(4.0, avg.output());
@@ -53,7 +54,7 @@ class AverageTest {
     }
 
     @Test
-    void testToString() {
+    void testToString() throws NoNumberFieldException {
         Table table = initMap();
         Average avg2 = new Average(table, "B");
         assertEquals("A média dos elementos da coluna B é: 5.0" , avg2.toString());

@@ -1,5 +1,6 @@
 package JUnit;
 
+import Exceptions.NoNumberFieldException;
 import helperClasses.Sum;
 import helperClasses.Table;
 import org.junit.jupiter.api.Test;
@@ -44,7 +45,7 @@ class SumTest {
         return table;
     }
     @Test
-    void extractColumn() {
+    void extractColumn() throws NoNumberFieldException {
         Table table = initMap();
         Sum sum = new Sum(table, "A");
         assertEquals("1", sum.ExtractColumn(table.getTable(), "A").get(0));
@@ -57,28 +58,28 @@ class SumTest {
     }
 
     @Test
-    void sumList() {
+    void sumList() throws NoNumberFieldException {
         Table table = initMap();
         Sum sum = new Sum(table, "A");
         assertEquals(12.0 ,sum.output());
     }
 
     @Test
-    void numberOfElements() {
+    void numberOfElements() throws NoNumberFieldException {
         Table table = initMap();
         Sum sum = new Sum(table, "A");
         assertEquals(3, sum.numberOfElements());
     }
 
     @Test
-    void output() {
+    void output() throws NoNumberFieldException {
         Table table = initMap();
         Sum sum = new Sum(table, "B");
         assertEquals(15.0 ,sum.output());
     }
 
     @Test
-    void testToString() {
+    void testToString() throws NoNumberFieldException {
         Table table = initMap();
         Sum sum = new Sum(table, "B");
         assertEquals("A soma dos elementos da coluna B é: 15.0", sum.toString());

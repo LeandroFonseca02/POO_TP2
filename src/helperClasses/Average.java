@@ -1,5 +1,7 @@
 package helperClasses;
 
+import Exceptions.NoNumberFieldException;
+
 import java.util.*;
 
 public class Average extends Sum {
@@ -14,7 +16,7 @@ public class Average extends Sum {
      * @param data objeto tabela, onde os dados estão guardados.
      * @param column chave da coluna a extraír os elementos.
      */
-    public Average(Table data, String column) {
+    public Average(Table data, String column) throws NoNumberFieldException {
         super(data, column);
         calculateAverage(super.output(), super.numberOfElements());
     }
