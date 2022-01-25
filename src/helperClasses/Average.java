@@ -4,7 +4,7 @@ import Exceptions.NoNumberFieldException;
 
 import java.util.*;
 
-public class Average extends Sum {
+public class Average extends Sum implements Aggregation{
     private double average;
 
     /**

@@ -4,7 +4,7 @@ import Exceptions.NoNumberFieldException;
 
 import java.util.*;
 
-public class Sum {
+public class Sum implements Aggregation{
     private double sum;
     protected String column;
     private ArrayList<String> extractedColumn;

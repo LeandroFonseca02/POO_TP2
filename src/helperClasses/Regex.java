@@ -1,9 +1,12 @@
 package helperClasses;
+import Enumerators.*;
+
+import Exceptions.ImpossibleCalculateException;
 
 import java.util.*;
 import java.lang.*;
-import java.io.*;
 import java.util.regex.*;
+
 
 public class Regex{
     String strQuery;
@@ -25,18 +28,49 @@ public class Regex{
      *
      * @return a ArrayList com a informação filtrada
      */
-    public ArrayList<String> regex (){
+    public ArrayList<String> regex () throws ImpossibleCalculateException {
         final String functionNameRegex = "\\w*[=<>!&|]*";
         final Pattern fnPattern = Pattern.compile(functionNameRegex, Pattern.CASE_INSENSITIVE | Pattern.COMMENTS);
         final Matcher fnMatcher = fnPattern.matcher(this.strQuery);
         ArrayList<String> expression = new ArrayList<>();
         while (fnMatcher.find()) {
-            if(!fnMatcher.group(0).equals("") && !fnMatcher.group(0).equals("Customer_Data")
-                    && !fnMatcher.group(0).equals("CALCULATE")){
+            if(!fnMatcher.group(0).equals("") && !fnMatcher.group(0).equals("Customer_Data")){
                 expression.add(fnMatcher.group(0));
             }
         }
+        check(expression);
+        clean(expression);
         return expression;
+    }
+
+    private void check(ArrayList<String> expression) throws ImpossibleCalculateException {
+        int counter=0;
+        for(String s: expression) {
+            if (s.equals("CALCULATE") && !teste(expression.get(counter+1))) {
+                throw new ImpossibleCalculateException("");
+            }
+            counter++;
+        }
+    }
+
+    private boolean teste(String ass){
+        boolean flag = false;
+        for(AggregationCommand agg: AggregationCommand.values()){
+            if(ass.equals(agg.toString())) flag =true;
+        }
+        return flag;
+    }
+
+    private void clean(ArrayList<String> expression){
+        int counter=expression.size();
+        String s;
+        for (int i = 0; i<counter; i++){
+            s=expression.get(i);
+            if(s.equals("CALCULATE")){
+                expression.remove(i);
+                counter--;
+            }
+        }
     }
 
     /**

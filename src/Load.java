@@ -1,6 +1,7 @@
 import Exceptions.ImpossibleConditionException;
 import Exceptions.NoLinesTableException;
 import Exceptions.NoNumberFieldException;
+import Exceptions.ImpossibleCalculateException;
 import helperClasses.*;
 
 import java.util.*;
@@ -18,7 +19,7 @@ public class Load {
      * @param scanner Scanner de inputs
      * @throws NoLinesTableException
      */
-    Load(Table table, Scanner scanner) throws NoLinesTableException,NoNumberFieldException,ImpossibleConditionException {
+    Load(Table table, Scanner scanner) throws NoLinesTableException, NoNumberFieldException, ImpossibleConditionException, ImpossibleCalculateException {
         this.objTable = new Table(table);
         this.processOutput(scanner);
     }
@@ -36,7 +37,7 @@ public class Load {
      * @param scanner
      * @throws NoLinesTableException 
      */
-    public void processOutput(Scanner scanner) throws NoLinesTableException, NoNumberFieldException, ImpossibleConditionException {
+    public void processOutput(Scanner scanner) throws NoLinesTableException, NoNumberFieldException, ImpossibleConditionException, ImpossibleCalculateException {
         Regex objRegex = new Regex(scanner.nextLine());
         ArrayList<String> arrayListCommand = objRegex.regex();
         Collections.reverse(arrayListCommand);
@@ -63,8 +64,6 @@ public class Load {
                 case "AVERAGE":
                     Average avg = new Average(objTableTemp, arrayListCommand.get(intCounter-1));
                     if(strMatch.equals(arrayListCommand.get(arrayListCommand.size()-1))) System.out.println(avg);
-                    break;
-                case "CALCULATE":
                     break;
                 case "FILTER":
                 case "&&":

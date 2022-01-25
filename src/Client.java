@@ -1,10 +1,14 @@
-import Exceptions.ImpossibleConditionException;
-import Exceptions.NoLinesTableException;
-import Exceptions.NoNumberFieldException;
+import Exceptions.*;
 import helperClasses.*;
 
 import java.io.IOException;
 import java.util.*;
+enum Aggregation{
+    AVERAGE,
+    SUM,
+    DISTINCTCOUNT,
+    COUNTROWS
+};
 
 public class Client {
     public static void main(String[] args) {
@@ -25,6 +29,8 @@ public class Client {
             System.out.println("A coluna que está a tentar calcular o AVERAGE/SUM não são números!");
         }catch (ImpossibleConditionException impossibleConditionException) {
             System.out.println("A expressão que tentou calcular não é possível!");
+        } catch (ImpossibleCalculateException e) {
+            System.out.println("Pimbas");
         }
     }
 }

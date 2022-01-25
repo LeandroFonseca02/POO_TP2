@@ -2,7 +2,7 @@ package helperClasses;
 
 import java.util.*;
 
-public class DistinctCount {
+public class DistinctCount implements Aggregation{
     private Set<String> extractedColumn;
     private String strColumn;
 

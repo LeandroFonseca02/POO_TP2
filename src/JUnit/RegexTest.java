@@ -1,5 +1,6 @@
 package JUnit;
 
+import Exceptions.ImpossibleCalculateException;
 import helperClasses.Regex;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class RegexTest {
 
     @Test
-    void regex() {
+    void regex() throws ImpossibleCalculateException {
         Regex regex = new Regex("(A),[B],{C}");
         assertEquals("A", regex.regex().get(0));
         assertEquals("B", regex.regex().get(1));

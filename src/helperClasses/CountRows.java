@@ -1,6 +1,6 @@
 package helperClasses;
 
-public class CountRows {
+public class CountRows implements Aggregation{
     private int intNumLinhas;
 
     /**

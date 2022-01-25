@@ -5,7 +5,7 @@ import Exceptions.ImpossibleConditionException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Filter {
+public class Filter implements Command{
     Table objTable;
     String strColumn;
     ArrayList<Integer> intList;
