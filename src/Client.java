@@ -6,8 +6,8 @@ public class Client {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         StringBuilder strPath = new StringBuilder("./resources/");
-//            String strFileName = scanner.nextLine();
-        String strFileName = "Customer_Data.csv";
+            String strFileName = scanner.nextLine();
+//            String strFileName = "Customer_Data.csv";
         strPath.append(strFileName);
         try {
             Extract objExtract = new Extract(strPath.toString());
