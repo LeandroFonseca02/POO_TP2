@@ -27,6 +27,7 @@ public class Regex{
      * numa ArrayList.
      *
      * @return a ArrayList com a informação filtrada
+     * @throws ImpossibleCalculateException lançada quando comando CALCULATE é mal usado.
      */
     public ArrayList<String> regex () throws ImpossibleCalculateException {
         final String functionNameRegex = "\\w*[=<>!&|]*";
@@ -38,37 +39,55 @@ public class Regex{
                 expression.add(fnMatcher.group(0));
             }
         }
-        check(expression);
-        clean(expression);
+        checkCalculateUsage(expression);
+        deleteCalculate(expression);
         return expression;
     }
 
-    private void check(ArrayList<String> expression) throws ImpossibleCalculateException {
-        int counter=0;
-        for(String s: expression) {
-            if (s.equals("CALCULATE") && !teste(expression.get(counter+1))) {
+    /**
+     * Método para lançar exceção caso o comando CALCULATE seja mal usado.
+     *
+     * @param arrayList arrayList de comandos a verificar
+     * @throws ImpossibleCalculateException lançada quando comando CALCULATE é mal usado.
+     */
+    private void checkCalculateUsage(ArrayList<String> arrayList) throws ImpossibleCalculateException {
+        int intCounter = 0;
+        for(String string: arrayList) {
+            if (string.equals("CALCULATE") && !isAggregationCommand(arrayList.get(intCounter+1))) {
                 throw new ImpossibleCalculateException("");
             }
-            counter++;
+            intCounter++;
         }
     }
 
-    private boolean teste(String ass){
-        boolean flag = false;
-        for(AggregationCommand agg: AggregationCommand.values()){
-            if(ass.equals(agg.toString())) flag =true;
+    /**
+     * Método para verficar se uma String é um comando de agregação
+     *
+     * @param strCommand string a verificar
+     * @return booleano com valor se é comando de agregação
+     */
+    private boolean isAggregationCommand(String strCommand){
+        boolean bolFlag = false;
+        for(AggregationCommands aggregationCommand: AggregationCommands.values()){
+            if(strCommand.equals(aggregationCommand.toString()))
+                bolFlag =true;
         }
-        return flag;
+        return bolFlag;
     }
 
-    private void clean(ArrayList<String> expression){
-        int counter=expression.size();
-        String s;
-        for (int i = 0; i<counter; i++){
-            s=expression.get(i);
-            if(s.equals("CALCULATE")){
-                expression.remove(i);
-                counter--;
+    /**
+     * Método para retirar o comando CALCULATE de uma arraylist
+     *
+     * @param arrayList para retirar o comando
+     */
+    private void deleteCalculate(ArrayList<String> arrayList){
+        int intLength = arrayList.size();
+        String strCommands;
+        for (int i = 0; i<intLength; i++){
+            strCommands = arrayList.get(i);
+            if(strCommands.equals("CALCULATE")){
+                arrayList.remove(i);
+                intLength--;
             }
         }
     }

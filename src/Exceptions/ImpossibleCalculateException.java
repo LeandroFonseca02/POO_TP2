@@ -1,5 +1,5 @@
 package Exceptions;
 
-public class ImpossibleCalculateException extends Throwable {
-    public ImpossibleCalculateException(String fodaSSe_pah) {super();}
+public class ImpossibleCalculateException extends Exception {
+    public ImpossibleCalculateException(String errorMessage){super((errorMessage));}
 }

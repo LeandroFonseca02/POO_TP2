@@ -58,7 +58,7 @@ public class Table {
      *  Imprime os dados formatados numa tabela.
      *  Lança exceção caso não exista valores a imprimir.
      *
-     * @throws NoLinesTableException
+     * @throws NoLinesTableException lançada quando a Tabela têm 0 linhas.
      */
     public void printTable() throws NoLinesTableException {this.tableFormatter.printTable();}
 

@@ -63,6 +63,8 @@ public class TableFormatter {
     /**
      * Método para imprimir a tabela formatada.
      * Calcula os separadores e os formatadores de cada coluna.
+     *
+     * @throws NoLinesTableException lançada quando a Tabela têm 0 linhas.
      */
     public void printTable() throws NoLinesTableException {
         if(intNumLines == 0) throw new NoLinesTableException("");

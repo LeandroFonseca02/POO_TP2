@@ -34,6 +34,7 @@ public class Expression {
      *
      * @param strCompareTo string para validar com a expressáo
      * @return booleano com valor da validação.
+     * @throws ImpossibleConditionException lançada quando condição é inválida.
      */
     public boolean isConditionTrue(String strCompareTo) throws ImpossibleConditionException{
         if(Regex.isNumber(this.strToCompare) && Regex.isNumber(strCompareTo)){

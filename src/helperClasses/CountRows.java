@@ -1,6 +1,8 @@
 package helperClasses;
 
-public class CountRows implements Aggregation{
+import Interfaces.Aggregation;
+
+public class CountRows implements Aggregation {
     private int intNumLinhas;
 
     /**
@@ -16,7 +18,7 @@ public class CountRows implements Aggregation{
     /**
      * Devolve o número de linhas de um objeto Table
      *
-     * @return
+     * @return String com informações do CountRows
      */
     public String toString(){return ("A tabela têm " + this.intNumLinhas + " linhas!");}
 }

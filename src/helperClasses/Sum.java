@@ -1,10 +1,11 @@
 package helperClasses;
 
 import Exceptions.NoNumberFieldException;
+import Interfaces.Aggregation;
 
 import java.util.*;
 
-public class Sum implements Aggregation{
+public class Sum implements Aggregation {
     private double sum;
     protected String column;
     private ArrayList<String> extractedColumn;
@@ -17,6 +18,7 @@ public class Sum implements Aggregation{
      *
      * @param data objeto table, onde os dados estão guardados.
      * @param column chave da coluna a extraír os elementos.
+     * @throws NoNumberFieldException lançada quando a coluna não tem valor numérico.
      */
     public Sum(Table data, String column) throws NoNumberFieldException{
         extractedColumn = new ArrayList<>();

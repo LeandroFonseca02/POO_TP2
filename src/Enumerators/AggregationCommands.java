@@ -1,6 +1,6 @@
 package Enumerators;
 
-public enum AggregationCommand {
+public enum AggregationCommands {
     AVERAGE,
     SUM,
     DISTINCTCOUNT,

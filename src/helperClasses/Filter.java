@@ -1,11 +1,11 @@
 package helperClasses;
 
 import Exceptions.ImpossibleConditionException;
-
+import Interfaces.Command;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Filter implements Command{
+public class Filter implements Command {
     Table objTable;
     String strColumn;
     ArrayList<Integer> intList;
@@ -16,6 +16,7 @@ public class Filter implements Command{
      *
      * @param table objeto do tipo Table
      * @param expression expressão a filtrar
+     * @throws ImpossibleConditionException quando a condicao do filter é invalido
      */
     public Filter(Table table, Expression expression) throws ImpossibleConditionException{
         this.objTable = new Table(table);
@@ -29,6 +30,7 @@ public class Filter implements Command{
      *  presente na query.
      *
      * @param expression objeto Expression para filtrar a tabela.
+     * @throws ImpossibleConditionException quando a condicao do filter é invalido
      */
     public void filterTable(Expression expression) throws ImpossibleConditionException {
         int counter = 0;

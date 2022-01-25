@@ -1,4 +1,4 @@
-package helperClasses;
+package Interfaces;
 
 public interface Command {
 }

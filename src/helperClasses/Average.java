@@ -1,10 +1,9 @@
 package helperClasses;
 
 import Exceptions.NoNumberFieldException;
+import Interfaces.Aggregation;
 
-import java.util.*;
-
-public class Average extends Sum implements Aggregation{
+public class Average extends Sum implements Aggregation {
     private double average;
 
     /**
@@ -15,6 +14,7 @@ public class Average extends Sum implements Aggregation{
      *
      * @param data objeto tabela, onde os dados estão guardados.
      * @param column chave da coluna a extraír os elementos.
+     * @throws NoNumberFieldException quando a coluna não é de valor numérico.
      */
     public Average(Table data, String column) throws NoNumberFieldException {
         super(data, column);

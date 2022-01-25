@@ -1,8 +1,10 @@
 package helperClasses;
 
+import Interfaces.Aggregation;
+
 import java.util.*;
 
-public class DistinctCount implements Aggregation{
+public class DistinctCount implements Aggregation {
     private Set<String> extractedColumn;
     private String strColumn;
 

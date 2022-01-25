@@ -1,8 +1,9 @@
 package helperClasses;
 
 import Exceptions.NoLinesTableException;
+import Interfaces.Command;
 
-public class All implements Command{
+public class All implements Command {
     Table data;
     /**
      * Construtor da classe All.
